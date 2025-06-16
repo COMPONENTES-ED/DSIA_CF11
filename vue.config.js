@@ -1,4 +1,5 @@
-const titulo = 'Arquitectura back-end para aplicaciones con IA'
+const titulo =
+  'Recolección y documentación de requisitos de software'
 
 module.exports = {
   publicPath: '',

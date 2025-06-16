@@ -54,7 +54,7 @@
         .cont_titulo3(data-aos="flip-up")
           h5.fst-italic Layouts: Box, Column y Row
         
-        p Los layouts son componentes fundamentales en el diseño de interfaces con Jetpack Compose. Permiten organizar y posicionar los elementos en la pantalla.
+        p Los #[em layouts] son componentes fundamentales en el diseño de interfaces con Jetpack Compose. Permiten organizar y posicionar los elementos en la pantalla.
 
         .p-4(style="background-color:#DFE9EA;border-radius:9px;")
           ul.lista-ul.mb-0
@@ -69,7 +69,7 @@
               span #[strong.fst-italic Row:] dispone los elementos horizontalmente, uno al lado del otro.
         p.mt-3.mb-0 Estos #[em layouts] pueden anidarse y combinarse para crear estructuras más complejas. Por ejemplo, se puede utilizar una #[em Column] que contenga varias #[em Rows] para diseñar una cuadrícula personalizada.
     
-    p.mt-4(data-aos="fade-right") La siguiente figura ilustra cómo se organizan los componentes en Jetpack Compose para crear una interfaz de usuario. Muestra la jerarquía de layouts y componentes, desde el contenedor principal hasta los elementos individuales.
+    p.mt-4(data-aos="fade-right") La siguiente figura ilustra cómo se organizan los componentes en Jetpack Compose para crear una interfaz de usuario. Muestra la jerarquía de #[em layouts] y componentes, desde el contenedor principal hasta los elementos individuales.
 
     .cont_3_1.mt-5
       .col-xl-6.col-lg-10.m-auto

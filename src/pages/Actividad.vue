@@ -10,8 +10,8 @@
               img(src="@/assets/curso/Falso_Verdadero.svg", alt="Texto que describa la imagen")
         .col-12.col-md-8.col-lg-9
           .titulo-segundo
-            h2 Prueba de conocimientos sobre arquitectura #[em back-end] para aplicaciones con IA
-          p.mb-4 Validar el conocimiento adquirido sobre arquitectura #[em back-end] para aplicaciones con IA. Esto se trabaja a partir de un conjunto de preguntas con el propósito de buscar una dinámica de razonamiento ágil sobre opciones cerradas y reafirmar un conocimiento declarado dentro del componente.
+            h2 Prueba de conocimientos sobre Arquitectura #[em back-end] para aplicaciones con IA
+          p.mb-4 Validar el conocimiento adquirido sobre Arquitectura #[em back-end] para aplicaciones con IA. Esto se trabaja a partir de un conjunto de preguntas con el propósito de buscar una dinámica de razonamiento ágil sobre opciones cerradas y reafirmar un conocimiento declarado dentro del componente.
           .tarjeta.actividad.p-3
             .row.justify-content-around.align-items-center            
               .col-sm.mb-3.mb-sm-0

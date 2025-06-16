@@ -40,11 +40,29 @@
         .col-lg(data-aos="fade-left")
           h5 Implementación básica de SharedPreferences 
           p Para guardar un valor:
-          figure.col-lg-10
-            img(src="@/assets/curso/tema2/4.svg" alt="Guardar un valor en SharedPreferences: Para almacenar un dato, primero obtenemos una instancia de SharedPreferences en modo privado. Luego, utilizamos el objeto editor para modificar y guardar el valor deseado.")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                | val sharedPreferences = context.getSharedPreferences("MyPrefs",
+                |     Context.MODE_PRIVATE)
+                | val editor = sharedPreferences.edit()
+                | editor.putString("tema_color", "oscuro")
+                | editor.apply()
+          //- figure.col-lg-10
+          //-   img(src="@/assets/curso/tema2/4.svg" alt="Guardar un valor en SharedPreferences: Para almacenar un dato, primero obtenemos una instancia de SharedPreferences en modo privado. Luego, utilizamos el objeto editor para modificar y guardar el valor deseado.")
           p.mt-4 Para recuperar un valor:
-          figure.col-lg-10
-            img(src="@/assets/curso/tema2/5.svg" alt="Recuperar un valor de SharedPreferences: Para acceder a un valor previamente almacenado, obtenemos la instancia de SharedPreferences y usamos el método adecuado para obtener el valor, proporcionando un valor por defecto en caso de que no exista.")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code 
+              | val sharedPreferences = context.getSharedPreferences("MyPrefs",
+              |     Context.MODE_PRIVATE)
+              | val temaColor = sharedPreferences.getString("tema_color", "claro")
+          //- figure.col-lg-10
+          //-   img(src="@/assets/curso/tema2/5.svg" alt="Recuperar un valor de SharedPreferences: Para acceder a un valor previamente almacenado, obtenemos la instancia de SharedPreferences y usamos el método adecuado para obtener el valor, proporcionando un valor por defecto en caso de que no exista.")
     
     .cont_titulo3.mt-5(data-aos="flip-up")
       h5 Bases de Datos SQLite: Conexión y Operaciones CRUD
@@ -58,34 +76,107 @@
       .col-lg-9(data-aos="fade-left")
         h5 Creación y configuración de la base de datos
         p Para utilizar SQLite, se debe crear una clase que extienda de SQLiteOpenHelper y definir el esquema de la base de datos:
-        figure
-          img(src="@/assets/curso/tema2/7.svg")
+        .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code 
+                | class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+                |     override fun onCreate(db: SQLiteDatabase) {
+                |         val createTable = "CREATE TABLE usuarios (id INTEGER PRIMARY KEY, nombre TEXT, email TEXT)"
+                |         db.execSQL(createTable)
+                |     }
+                | 
+                |     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+                |         db.execSQL("DROP TABLE IF EXISTS usuarios")
+                |         onCreate(db)
+                |     }
+                | }
+        //- figure
+        //-   img(src="@/assets/curso/tema2/7.svg")
     
     h5.mt-5(data-aos="fade-right") Operaciones CRUD
 
     .row.mt-4 
-      .col-lg.mb-4.mb-lg-0(data-aos="zoom-in")
+      .col-lg-6.mb-4.mb-lg-0(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Crear (Insertar):
-          figure
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+              | val db = dbHelper.writableDatabase
+              | val values = ContentValues().apply {
+              |     put("nombre", "Carlos Sánchez")
+              |     put("email", "carlos@example.com")
+              | }
+              | db.insert("usuarios", null, values)
+          //- figure
             img(src="@/assets/curso/tema2/8.svg")
-      .col-lg(data-aos="zoom-in")
+      .col-lg-6(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Leer (Consultar):
-          figure.m-auto.col-md-8.col-lg-12
-            img(src="@/assets/curso/tema2/9.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+              | val db = dbHelper.readableDatabase
+              | val cursor = db.query(
+              |     "usuarios",
+              |     arrayOf("id", "nombre", "email"),
+              |     null,
+              |     null,
+              |     null,
+              |     null,
+              |     null
+              | )
+              | 
+              | with(cursor) {
+              |     while (moveToNext()) {
+              |         val nombre = getString(getColumnIndexOrThrow("nombre"))
+              |         val email = getString(getColumnIndexOrThrow("email"))
+              |         // Procesar datos…
+              |     }
+              | }
+              | 
+              | cursor.close()
+          //- figure.m-auto.col-md-8.col-lg-12
+          //-   img(src="@/assets/curso/tema2/9.svg")
     
     .row.mt-4 
-      .col-lg.mb-4.mb-lg-0(data-aos="zoom-in")
+      .col-lg-6.mb-4.mb-lg-0(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Actualizar:
-          figure
-            img(src="@/assets/curso/tema2/10.svg")
-      .col-lg(data-aos="zoom-in")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+              | val db = dbHelper.writableDatabase
+              | val values = ContentValues().apply {
+              |     put("email", "nuevo_email@example.com")
+              | }
+              | val selection = "id = ?"
+              | val selectionArgs = arrayOf("1")
+              | db.update("usuarios", values, selection, selectionArgs)
+          //- figure
+          //-   img(src="@/assets/curso/tema2/10.svg")
+      .col-lg-6(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Eliminar:
-          figure
-            img(src="@/assets/curso/tema2/11.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+              | val db = dbHelper.writableDatabase
+              | val selection = "id = ?"
+              | val selectionArgs = arrayOf("1")
+              | db.delete("usuarios", selection, selectionArgs)
+          //- figure
+          //-   img(src="@/assets/curso/tema2/11.svg")
     
     .cont_titulo3.mt-5(data-aos="flip-up")
       h5 Manejo de multitablas
@@ -111,8 +202,16 @@
               span #[strong Muchos a muchos:] un libro puede pertenecer a varias categorías y una categoría puede incluir varios libros.
         p Para manejar estas relaciones, se utilizan claves primarias y foráneas, y se realizan consultas que combinan datos de múltiples tablas mediante JOINs.
         p Ejemplo de consulta con JOIN:
-        figure.col-lg-10.mb-3
-          img(src="@/assets/curso/tema2/13.svg")
+        .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+              |SELECT libros.titulo, autores.nombre
+              | FROM libros
+              | INNER JOIN autores ON libros.autor_id = autores.id
+        //- figure.col-lg-10.mb-3
+        //-   img(src="@/assets/curso/tema2/13.svg")
         p.mb-0 Esta consulta obtiene los títulos de los libros junto con el nombre de sus respectivos autores.
     
     Separador
@@ -146,16 +245,40 @@
     p(data-aos="fade-left") En aplicaciones móviles, no es recomendable conectarse directamente a la base de datos MySQL por motivos de seguridad y rendimiento. En su lugar, se utiliza un API RESTful que actúa como intermediario entre la aplicación y la base de datos.
 
     .row.mt-4 
-      .col-lg.mb-4.mb-lg-0(data-aos="zoom-in")
+      .col-lg-6.mb-4.mb-lg-0(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Ejemplo de API RESTful en PHP:
-          figure
-            img(src="@/assets/curso/tema2/15.svg")
-      .col-lg(data-aos="zoom-in")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code  
+                | &lt;?php
+                | header('Content-Type: application/json');
+                | $conn = new mysqli("localhost", "usuario", "contraseña", "basedatos");
+                | $result = $conn-&gt;query("SELECT * FROM usuarios");
+                | $usuarios = array();
+                | while($row = $result-&gt;fetch_assoc()) {
+                |     $usuarios[] = $row;
+                | }
+                | echo json_encode($usuarios);
+                | ?&gt;
+          //- figure
+          //-   img(src="@/assets/curso/tema2/15.svg")
+      .col-lg-6(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p La aplicación móvil puede consumir este API utilizando Retrofit:
-          figure
-            img(src="@/assets/curso/tema2/16.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code 
+                | interface ApiService {
+                |     @GET("obtener_usuarios.php")
+                |     suspend fun obtenerUsuarios(): List&lt;Usuario&gt;
+                | }
+          //- figure
+          //-   img(src="@/assets/curso/tema2/16.svg")
     
     .cont_titulo3.mt-5(data-aos="flip-up")
       h5 Introducción a ORM y Room: configuración y uso
@@ -165,35 +288,88 @@
     h5.mt-5(data-aos="fade-left") Configuración de Room
 
     .row.mt-4 
-      .col-lg.mb-4.mb-lg-0(data-aos="zoom-in")
+      .col-lg-6.mb-4.mb-lg-0(data-aos="zoom-in")
         .p-3.h-100(style="background-color:#E6F0FC;border-radius:7px;")
           p Agregar dependencias en el archivo build.gradle:
-          figure
-            img(src="@/assets/curso/tema2/17.svg")
-      .col-lg(data-aos="zoom-in")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                |implementation "androidx.room:room-untime:2.4.0"  
+                |kap1 "androidx.room:room-compiler:2.4.0"
+          //- figure
+          //-   img(src="@/assets/curso/tema2/17.svg")
+      .col-lg-6(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Definir entidades (tablas):
-          figure
-            img(src="@/assets/curso/tema2/18.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                |@Entity(tableName = "usuarios")
+                |data class Usuario(
+                |    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+                |    val nombre String,
+                |    val email: String
+                |)
+          //- figure
+          //-   img(src="@/assets/curso/tema2/18.svg")
     
     .row.mt-4 
-      .col-lg.mb-4.mb-lg-0(data-aos="zoom-in")
+      .col-lg-6.mb-4.mb-lg-0(data-aos="zoom-in")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Crear DAO #[em (Data Access Object):]
-          figure
-            img(src="@/assets/curso/tema2/19.svg")
-      .col-lg(data-aos="zoom-in")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                |@Dao
+                |interface UsuarioDao {
+                |    @Insert
+                |    suspend fun insertartUsuario(usuario: Usuario)
+                |
+                |    @Query("SELECT * FROM usuarios")
+                |    suspend fun obtenerUsuarios(). List &lt;Usuario&gt;
+                |}
+          //- figure
+          //-   img(src="@/assets/curso/tema2/19.svg")
+      .col-lg-6(data-aos="zoom-in")
         .p-3.h-100(style="background-color:#E6F0FC;border-radius:7px;")
           p Configurar la base de datos:
-          figure
-            img(src="@/assets/curso/tema2/20.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code 
+                |@Database(entities = {Usuario.class}, version = 1)
+                |abstract class AppDatabase .RoomDatabase() {
+                |    abstract fun usuarioDao(). UsuarioDao
+                |}
+          //- figure
+          //-   img(src="@/assets/curso/tema2/20.svg")
     
     .row.mt-4 
-      .col-lg(data-aos="zoom-in")
+      .col-lg-7(data-aos="zoom-in")
         .p-3.h-100(style="background-color:#E6F0FC;border-radius:7px;")
           p Uso de Room en la aplicación:
-          figure
-            img(src="@/assets/curso/tema2/21.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                |val db = Room.databaseBuilder(
+                |    applicationContext,
+                |    AppDatabase.class.java, "ml_base_de_datos"
+                |    ) build()
+                |
+                |val usuarioDao = db.usuarioDao()
+                |val nuevoUsuario = Usuario(nombre = "Laura López", email = "laura@example.com")
+                |usuarioDao.insertar(usuario(nuevoUsuario)
+          //- figure
+          //-   img(src="@/assets/curso/tema2/21.svg")
       .col-lg-auto.d-none.d-lg-block(data-aos="fade-left")
         figure
           img(src="@/assets/curso/tema2/22.png")
@@ -226,15 +402,36 @@
     p(data-aos="fade-left") Agregar Firebase al proyecto: utilizando el asistente en Android Studio o mediante la consola de Firebase.
 
     .row.mt-4
-      .col-lg(data-aos="fade-right")
+      .col-lg-8(data-aos="fade-right")
         .p-3.mb-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Escribir datos:
-          figure
-            img(src="@/assets/curso/tema2/24.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                |val database = Firebase.database
+                |val myRef = database.getReference("usuarios")
+                |myRef.child("usuario1").setValue(Usuario(nombre = "Ana Torres", email = "ana@example.com")
+          //- figure
+          //-   img(src="@/assets/curso/tema2/24.svg")
         .p-3(style="background-color:#E6F0FC;border-radius:7px;")
           p Leer datos:
-          figure
-            img(src="@/assets/curso/tema2/25.svg")
+          .tarjeta.overflow-hidden(style="background-color: #110628 ")
+            .p-3.mb-5(style="background-color: #3A1D71")
+              img(src='@/assets/curso/iconos.svg', alt='' style='width: 80px;')
+            pre.p-5.text-white.py-2.mb-4
+              code
+                |myRef.addValueEventListener(object: ValueEventListener (
+                |override fun onDataChange(snapshot: DataSnapshot) {
+                |    val usuarios = snapshot.children.mapNotNull ( it getValue(Usuario.class.java ) )
+                |    // Actualizar la interfaz de usuario
+                |}
+                |override fun onCancelled(error: DatabaseError) {
+                |    // Manejar el error
+                |}
+          //- figure
+          //-   img(src="@/assets/curso/tema2/25.svg")
       .col-lg-auto.d-none.d-lg-block(data-aos="fade-left")
         figure
           img(src="@/assets/curso/tema2/26.svg")
@@ -283,7 +480,7 @@
         figure
           img(src="@/assets/curso/tema2/29.png")
       .col-lg-8(data-aos="fade-left")
-        p Buenas prácticas en la gestión de datos
+        p Buenas prácticas en la construcción de consultas:
         .p-3(style="background-color:#DFE9EA;border-radius:5px;")
           ul.lista-ul.mb-0
             li.d-flex
@@ -295,7 +492,7 @@
             li.d-flex.mb-0
               i.fas.fa-check-circle(style="color:#1169E3;")
               span #[strong Gestionar las transacciones:] asegurar la integridad de los datos en operaciones complejas.
-        p.mt-3 Buenas prácticas en la construcción de consultas:
+        p.mt-3 Buenas prácticas en la gestión de datos:
         .p-3(style="background-color:#CFE1FA;border-radius:5px;")
           ul.lista-ul.mb-0
             li.d-flex
