@@ -27,7 +27,7 @@
     .row.justify-content-center.mt-5
       .col-lg-10.mb-5
         figure(data-aos="fade-up" data-aos-duration="800")
-          img(src="@/assets/curso/sintesis.svg", alt="alt")
+          img(src="@/assets/curso/sintesis.svg", alt="La síntesis menciona los principales temas tratados sobre arquitectura back-end para aplicaciones con IA como sus fundamentos, la persistencia y gestión de datos, el desarrollo de APIs RESTful, y las interfaces y pruebas así como algunos subtemas que los integran.")
       .col-auto
         a.anexo.mb-5(:href="obtenerLink('/downloads/Sintesis.pdf')" target="_blank")
           .anexo__icono

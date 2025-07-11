@@ -13,7 +13,7 @@
           figure
             img(src="@/assets/curso/tema4/1.svg")
         .col-md(style="place-self:center;")
-          p.mb-0 El desarrollo de interfaces de usuario efectivas y la realización de pruebas exhaustivas son componentes esenciales en la creación de aplicaciones con inteligencia artificial. Una interfaz bien diseñada facilita la interacción del usuario con la aplicación, mientras que las pruebas aseguran que el sistema funcione correctamente y cumpla con los requisitos establecidos. En este capítulo, se explorará el uso de Jetpack Compose para el diseño de interfaces, la aplicación de estilos y temas siguiendo las directrices de Material #[em Design], el desarrollo de aplicaciones #[em web] y las mejores prácticas en pruebas unitarias y documentación.
+          p.mb-0 El desarrollo de interfaces de usuario efectivas y la realización de pruebas exhaustivas son componentes esenciales en la creación de aplicaciones con inteligencia artificial. Una interfaz bien diseñada facilita la interacción del usuario con la aplicación, mientras que las pruebas aseguran que el sistema funcione correctamente y cumpla con los requisitos establecidos. En este capítulo, se explorará el uso de Jetpack Compose para el diseño de interfaces, la aplicación de estilos y temas siguiendo las directrices de Material Design, el desarrollo de aplicaciones #[em web] y las mejores prácticas en pruebas unitarias y documentación.
     
     Separador
     
@@ -108,7 +108,7 @@
     Separador
     
     .titulo-segundo(data-aos="flip-up")
-      h2#t_4_2 4.2	Estilos, temas y material design
+      h2#t_4_2 4.2	Estilos, temas y Material Design
     
     p(data-aos="fade-right") El diseño visual de una aplicación es determinante para ofrecer una experiencia de usuario atractiva y coherente. Aplicar estilos y temas permite unificar la apariencia y facilitar cambios globales en la interfaz.
 
@@ -126,16 +126,16 @@
             ul.lista-ul.ps-4
               li.d-flex.mb-1
                 i.fas.fa-check-circle(style="color:#1169E3;")
-                span #[strong Tema de Aplicación:] afecta a todos los componentes de la aplicación.
+                span #[strong Tema de aplicación:] afecta a todos los componentes de la aplicación.
               li.d-flex.mb-1
                 i.fas.fa-check-circle(style="color:#1169E3;")
-                span #[strong Tema de Activity:] se aplica a una actividad específica.
+                span #[strong Tema de activity:] se aplica a una actividad específica.
               li.d-flex.mb-1
                 i.fas.fa-check-circle(style="color:#1169E3;")
-                span #[strong Tema de Vista:] se aplica a un componente o vista en particular.
+                span #[strong Tema de vista:] se aplica a un componente o vista en particular.
               li.d-flex.mb-1
                 i.fas.fa-check-circle(style="color:#1169E3;")
-                span #[strong Estilo de Vista:] define atributos para un tipo específico de componente, como botones o textos.
+                span #[strong Estilo de vista:] define atributos para un tipo específico de componente, como botones o textos.
               li.d-flex.mb-0
                 i.fas.fa-check-circle(style="color:#1169E3;")
                 span #[strong TextAppearance:] es un estilo específico para textos, que controla atributos como la fuente, el tamaño y el color.
@@ -282,7 +282,7 @@
       .col-lg(data-aos="fade-left")
         .row
           .col-lg
-            p.mb-0 En esencia, el desarrollo de interfaces de usuario y la realización de pruebas son aspectos críticos en la creación de aplicaciones con inteligencia artificial. Utilizar herramientas modernas como Jetpack Compose simplifica el diseño de interfaces atractivas y funcionales. Aplicar estilos y temas basados en Material #[em Design] asegura una experiencia de usuario coherente y agradable.
+            p.mb-0 En esencia, el desarrollo de interfaces de usuario y la realización de pruebas son aspectos críticos en la creación de aplicaciones con inteligencia artificial. Utilizar herramientas modernas como Jetpack Compose simplifica el diseño de interfaces atractivas y funcionales. Aplicar estilos y temas basados en Material Design asegura una experiencia de usuario coherente y agradable.
           .col-lg-auto.d-none.d-lg-block
             figure
               img(src="@/assets/curso/tema4/14.svg")

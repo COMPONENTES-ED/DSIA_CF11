@@ -23,42 +23,42 @@ export default {
     referencias: [
       {
         referencia:
-          'Barbara, J. (2023). Practical C++ Backend Programming: Crafting Databases, APIs, and <em>Web</em> Servers for High-Performance Backend. GitforGits.',
+          'Barbara, J. (2023). Practical C++ Backend Programming: Crafting Databases, APIs, and Web Servers for High-Performance Backend. GitforGits.',
         link: '',
       },
       {
         referencia:
-          'Borrego, A., Bermudo, M., Sola, F., Ayala, D., Hernández, I., & Ruiz, D. (2022). Silence — A <em>web framework</em> for an agile generation of RESTful APIs. SoftwareX, 20.',
+          'Borrego, A., Bermudo, M., Sola, F., Ayala, D., Hernández, I., & Ruiz, D. (2022). Silence — A web framework for an agile generation of RESTful APIs. SoftwareX, 20.',
         link: 'https://doi.org/10.1016/j.softx.2022.101260',
       },
       {
         referencia:
           'Firebase. (s. f.). Firebase Realtime Database. Firebase Documentation. Recuperado el 16 de octubre de 2023, de',
-        link: 'https://firebase.google.com/docs/database ',
+        link: 'https://firebase.google.com/docs/database',
       },
       {
         referencia:
-          'Google Developers. (s. f.). Biblioteca de persistencia Room. Android Developers. Recuperado el 16 de octubre de 2023, de',
-        link: 'https://developer.android.com/training/data-storage/room ',
+          'Google Developers. (s. f.). Cómo guardar datos en una base de datos local usando Room. Android Developers. Recuperado el 05 de julio de 2025, de',
+        link: 'https://developer.android.com/training/data-storage/room',
       },
       {
         referencia:
-          'Google Developers. (s. f.). Guía de arquitectura de aplicaciones. Android Developers. Recuperado el 16 de octubre de 2023, de ',
-        link: 'https://developer.android.com/jetpack/guide ',
+          'Google Developers. (s. f.). Guía de arquitectura de apps. Android Developers. Recuperado el 16 de octubre de 2023, de',
+        link: 'https://developer.android.com/jetpack/guide',
       },
       {
         referencia:
-          'Google Developers. (s. f.). Introducción a Jetpack Compose. Android Developers. ',
+          'Google Developers. (s. f.). Introducción a Jetpack Compose. Android Developers.',
         link: '',
       },
       {
         referencia:
-          'Google Developers. (s. f.). Pruebas de aplicaciones. Android Developers. Recuperado el 16 de octubre de 2023, de ',
-        link: 'https://developer.android.com/training/testing ',
+          'Google Developers. (s. f.). Prueba apps en Android. Android Developers. Recuperado el 16 de octubre de 2023, de',
+        link: 'https://developer.android.com/training/testing',
       },
       {
         referencia:
-          'Herdiyatmoko, H. F. (2022). <em>BACK-END</em> SYSTEM DESIGN BASED ON REST API. Jurnal Teknik Informasi Dan Komputer (Tekinkom), 5(1), 123.',
+          'Herdiyatmoko, H. F. (2022). BACK-END SYSTEM DESIGN BASED ON REST API. Jurnal Teknik Informasi Dan Komputer (Tekinkom), 5(1), 123.',
         link: 'https://doi.org/10.37600/tekinkom.v5i1.401',
       },
       {
@@ -68,7 +68,7 @@ export default {
       },
       {
         referencia:
-          'Kaluža, M., Kalanj, M., & Vukelić, B. (2019). A comparison of <em>back-end frameworks for web</em> application development. Zbornik Veleučilišta u Rijeci, 7(1), 317–332. ',
+          'Kaluža, M., Kalanj, M., & Vukelić, B. (2019). A comparison of back-end frameworks for web application development. Zbornik Veleučilišta u Rijeci, 7(1), 317–332.',
         link: 'https://doi.org/10.31784/zvr.7.1.10',
       },
       {
@@ -78,12 +78,12 @@ export default {
       },
       {
         referencia:
-          "Martín, R. C. (2018). Clean Architecture: A Craftsman's Guide to Software Structure and Design. Prentice Hall.",
+          'Martín, R. C. (2018). Clean Architecture: A Craftsman&#39;s Guide to Software Structure and Design. Prentice Hall.',
         link: '',
       },
       {
         referencia:
-          'Nurhayati, E., & Agussalim, A. (2023). Rancang Bangun <em>Back-end</em> API pada Aplikasi Mobile AyamHub Menggunakan <em>Framework</em> Node JS Express. Jurnal Sistem Dan Teknologi Informasi (JustIN), 11(3), 524.',
+          'Nurhayati, E., & Agussalim, A. (2023). Rancang Bangun Back-end API pada Aplikasi Mobile AyamHub Menggunakan Framework Node JS Express. Jurnal Sistem Dan Teknologi Informasi (JustIN), 11(3), 524.',
         link: 'https://doi.org/10.26418/justin.v11i3.66823',
       },
       {
@@ -93,8 +93,8 @@ export default {
       },
       {
         referencia:
-          'Square, Inc. (s. f.). Retrofit. Square Open Source. Recuperado el 16 de octubre de 2023, de ',
-        link: 'https://square.github.io/retrofit/ ',
+          'Square, Inc. (s. f.). Retrofit. Square Open Source. Recuperado el 16 de octubre de 2023, de',
+        link: 'https://square.github.io/retrofit/',
       },
       {
         referencia:
